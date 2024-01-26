@@ -10,7 +10,27 @@ import { Component } from '@angular/core';
       <input type="file" (change)="onFileSelected($event)">
       <p *ngIf="selectedFile">Selected file: {{ selectedFile.name }}</p>
       <button (click)="submitFile()">Submit</button>
-      <pre *ngIf="fileContent">{{ fileContent }}</pre>
+      <div *ngIf="fileContent">
+      Confirm data before saving
+      <table>
+        <thead>
+          <tr>
+            <th *ngFor="let header of headers">
+              {{ header }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of data">
+            <td *ngFor="let cell of row">
+              {{ cell }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button (click)="saveData()">Save</button>      
+    </div>
+    
     </main>
   `,
   styleUrls: ['./upload.component.css']
@@ -18,6 +38,8 @@ import { Component } from '@angular/core';
 export class UploadComponent {
   selectedFile: File | undefined = undefined;
   fileContent: String | undefined = undefined;
+  headers: string[] = [];
+  data: string[][] = [];
 
   onFileSelected(event: any) {
     const file = event.target?.files?.[0]; // Use optional chaining
@@ -27,9 +49,7 @@ export class UploadComponent {
       console.error('Invalid file type. Please select a CSV file.');
       return;
     }
-
     this.selectedFile = file;
-    // Initiate the upload process to the backend
   }
   submitFile() {
     if (!this.selectedFile) {
@@ -40,7 +60,14 @@ export class UploadComponent {
     const fileReader = new FileReader();
     fileReader.onload = (event: any) => {
       this.fileContent = event.target.result as string;
+      const csvData = this.fileContent.split('\n');
+      this.headers = csvData[0].split(',');
+      this.data = csvData.slice(1).map(row => row.split(','));
     };
     fileReader.readAsText(this.selectedFile);
+  }
+  saveData(){
+    // initiate the upload process to the backend
+    console.log("Save to database");
   }
 }

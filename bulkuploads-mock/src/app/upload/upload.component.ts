@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+// import {saveAs} from "file-saver";
 
 @Component({
   selector: 'app-upload',
@@ -10,6 +11,7 @@ import { Component } from '@angular/core';
       <input type="file" (change)="onFileSelected($event)">
       <p *ngIf="selectedFile">Selected file: {{ selectedFile.name }}</p>
       <button (click)="submitFile()">Submit</button>
+      <pre *ngIf="error">{{ error }}</pre>
       <div *ngIf="fileContent">
       Confirm data before saving
       <table>
@@ -30,7 +32,7 @@ import { Component } from '@angular/core';
       </table>
       <button (click)="saveData()">Save</button>      
     </div>
-    
+
     </main>
   `,
   styleUrls: ['./upload.component.css']
@@ -40,13 +42,14 @@ export class UploadComponent {
   fileContent: String | undefined = undefined;
   headers: string[] = [];
   data: string[][] = [];
+  error: string = "";
 
   onFileSelected(event: any) {
     const file = event.target?.files?.[0]; // Use optional chaining
 
     // Validate file type (CSV)
     if (file.type !== 'text/csv') {
-      console.error('Invalid file type. Please select a CSV file.');
+      this.error = 'Invalid file type. Please select a CSV file.';
       return;
     }
     this.selectedFile = file;
@@ -66,8 +69,18 @@ export class UploadComponent {
     };
     fileReader.readAsText(this.selectedFile);
   }
-  saveData(){
-    // initiate the upload process to the backend
-    console.log("Save to database");
+  saveData() {
+    const jsonData = this.data.map(row => ({ ...Object.fromEntries(row.map(cell => [this.headers[row.indexOf(cell)], cell])) })); // Convert to array of objects
+    const jsonString = JSON.stringify(jsonData, null, 2); // Formatted JSON string
+
+    const blob = new Blob([jsonString], { type: 'application/json;charset=utf-8' });
+    const filename = 'contacts.json'; // Adjust filename as needed
+
+    // saveAs(blob, filename); // Trigger browser download
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+    link.click();
+    URL.revokeObjectURL(link.href);
   }
 }

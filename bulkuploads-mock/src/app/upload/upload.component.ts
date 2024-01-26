@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-// import {saveAs} from "file-saver";
 
 @Component({
   selector: 'app-upload',
@@ -76,7 +75,6 @@ export class UploadComponent {
     const blob = new Blob([jsonString], { type: 'application/json;charset=utf-8' });
     const filename = 'contacts.json'; // Adjust filename as needed
 
-    // saveAs(blob, filename); // Trigger browser download
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
     link.download = filename;

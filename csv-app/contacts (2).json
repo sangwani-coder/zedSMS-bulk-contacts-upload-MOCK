@@ -1,0 +1,75 @@
+[
+  {
+    "Name": "Peter Zyambo",
+    "Email": "zyambo@example.com",
+    "Phone": "555-1234",
+    "Address": "123 Main St",
+    "City": " Lusaka"
+  },
+  {
+    "Name": "Mulenga John",
+    "Email": "mulenga@example.com",
+    "Phone": "555-5678",
+    "Address": "456 Elm St",
+    "City": " Kitwe"
+  },
+  {
+    "Name": "Mwansa Mwamba",
+    "Email": "mm@example.com",
+    "Phone": "555-9101",
+    "Address": "789 Oak St",
+    "City": " Ndola"
+  },
+  {
+    "Name": "Emily Brown",
+    "Email": "emilybrown@example.com",
+    "Phone": "555-2345",
+    "Address": "101 Pine St",
+    "City": " Kabwe"
+  },
+  {
+    "Name": "Chris Lishebo",
+    "Email": "lishebo@example.com",
+    "Phone": "555-6789",
+    "Address": "321 Maple St",
+    "City": " Kitwe"
+  },
+  {
+    "Name": "Sarah Lee",
+    "Email": "sarahlee@example.com",
+    "Phone": "555-3456",
+    "Address": "543 Birch St",
+    "City": " Lusaka"
+  },
+  {
+    "Name": "David Miller",
+    "Email": "davidmiller@example.com",
+    "Phone": "555-7890",
+    "Address": "876 Cedar St",
+    "City": " Lusaka"
+  },
+  {
+    "Name": "Lisa Davis",
+    "Email": "lisadavis@example.com",
+    "Phone": "555-4567",
+    "Address": "654 Walnut St",
+    "City": " Kabwe"
+  },
+  {
+    "Name": "James Taylor",
+    "Email": "jamestaylor@example.com",
+    "Phone": "555-8901",
+    "Address": "210 Spruce St",
+    "City": " Ndola"
+  },
+  {
+    "Name": "Emma Zulu",
+    "Email": "emmazulu@example.com",
+    "Phone": "555-5678",
+    "Address": "123 Cherry St",
+    "City": " Kitwe"
+  },
+  {
+    "Name": ""
+  }
+]

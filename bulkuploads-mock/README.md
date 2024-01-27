@@ -1,27 +1,17 @@
-# BulkuploadsMock
+# Frontend Development for ZED SMS Mockup Application
+This directory houses the Angular code for the frontend portion of the mock fullstack application. It currently contains placeholder views and components demonstrating the data structure and intended functionality.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.1.
+## Current Functionality:
+- Allows users upload a CSV file.
+- checks the file MIME type before processing the data.
+- Displays a basic UI for viewing company information before saving.
+- Allows users to save the data in JSON format on disk.
 
-## Development server
+## Work Remaining:
+- Implement data fetching from the Node.js API based on user search input.
+- Build UI components for displaying retrieved company details and contacts.
+- Develop functionalities for adding new company data through the UI.
+- Enhance UI/UX design for a more user-friendly experience.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Technologies:
+- Angular CLI

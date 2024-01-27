@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
 
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.json()); // Parse JSON request bodies
+// app.use(bodyParser.urlencoded({ extended: false })); // For URL-encoded bodies
 const port = 3000;
 
 // Hard-coded data (replace with your actual database data)

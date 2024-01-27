@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+body {
+  height: 125vh;
+  font-family: 'Be Vietnam Pro', sans-serif;  
+}
+
+
+.msg {
+  text-align: center;
+  font-weight: bold;
+}

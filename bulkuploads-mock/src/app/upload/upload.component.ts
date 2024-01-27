@@ -1,18 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-upload',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgbModule],
   template: `
     <main class="main">
       <input type="file" (change)="onFileSelected($event)">
-      <p *ngIf="selectedFile">Selected file: {{ selectedFile.name }}</p>
+      <p class="msg" *ngIf="selectedFile">Selected file: {{ selectedFile.name }}</p>
       <button (click)="submitFile()">Submit</button>
-      <pre *ngIf="error">{{ error }}</pre>
+      <pre class="msg" *ngIf="error">{{ error }}</pre>
       <div *ngIf="fileContent">
-      Confirm data before saving
+      <p class="msg">Confirm data before saving</p>
       <table>
         <thead>
           <tr>

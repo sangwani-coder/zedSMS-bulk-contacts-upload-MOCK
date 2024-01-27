@@ -47,7 +47,7 @@ This repository showcases a mock fullstack application demonstrating my skills i
 - This project demonstrates my understanding of fullstack development principles and my ability to utilize modern
 technologies like MongoDB Atlas to build efficient and scalable web applications.
 
-For further details on specific aspects of the project, please refer to the individual **READMEs** within the (server)[./csv-app] and (frontend)[./bulkuploads-mock] directories.
+For further details on specific aspects of the project, please refer to the individual **README's** within the <a href="./csv-app">server</a> and <a href="./bulkuploads-mock">frontend</a> directories.
 
 Feel free to contribute by suggesting improvements or features for this project. Remember, this is a continuous learning process, and I'm always looking for ways to enhance my skills and knowledge.
 

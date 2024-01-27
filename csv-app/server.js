@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 
 const port = 3333;
 const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://mightypz2:dev200Connects@cluster0.ifurnju.mongodb.net/?retryWrites=true&w=majority";
+const uri = "";
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri);
 const db = client.db("zedsms_mock");

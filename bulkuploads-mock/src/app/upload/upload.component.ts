@@ -8,12 +8,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [CommonModule, NgbModule],
   template: `
     <main class="main">
+      <h3 class="error" *ngIf="error">{{ error }}</h3>
       <input type="file" (change)="onFileSelected($event)">
       <p class="msg" *ngIf="selectedFile">Selected file: {{ selectedFile.name }}</p>
       <button *ngIf="selectedFile" (click)="submitFile()">Submit</button>
-      <pre class="msg" *ngIf="error">{{ error }}</pre>
       <div *ngIf="fileContent">
       <p class="msg">Confirm data before saving</p>
+      <!-- Contacts table -->
       <table>
         <thead>
           <tr>
@@ -31,6 +32,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         </tbody>
       </table>
       <button (click)="saveData()">Save</button>      
+      <!-- End contacts table -->
     </div>
 
     </main>
@@ -44,12 +46,17 @@ export class UploadComponent {
   data: string[][] = [];
   error: string = "";
 
+  fileError(event: any) {
+    location.reload()
+  }
+
   onFileSelected(event: any) {
     const file = event.target?.files?.[0]; // Use optional chaining
 
     // Validate file type (CSV)
     if (file.type !== 'text/csv') {
       this.error = 'Invalid file type. Please select a CSV file.';
+      window.setInterval(this.fileError, 3000);
       return;
     }
     this.selectedFile = file;

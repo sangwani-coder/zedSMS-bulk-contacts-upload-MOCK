@@ -10,7 +10,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     <main class="main">
       <input type="file" (change)="onFileSelected($event)">
       <p class="msg" *ngIf="selectedFile">Selected file: {{ selectedFile.name }}</p>
-      <button (click)="submitFile()">Submit</button>
+      <button *ngIf="selectedFile" (click)="submitFile()">Submit</button>
       <pre class="msg" *ngIf="error">{{ error }}</pre>
       <div *ngIf="fileContent">
       <p class="msg">Confirm data before saving</p>

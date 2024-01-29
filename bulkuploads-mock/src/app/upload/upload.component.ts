@@ -6,37 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   selector: 'app-upload',
   standalone: true,
   imports: [CommonModule, NgbModule],
-  template: `
-    <main class="main">
-      <h3 class="error" *ngIf="error">{{ error }}</h3>
-      <input type="file" (change)="onFileSelected($event)">
-      <p class="msg" *ngIf="selectedFile">Selected file: {{ selectedFile.name }}</p>
-      <button *ngIf="selectedFile" (click)="submitFile()">Submit</button>
-      <div *ngIf="fileContent">
-      <p class="msg">Confirm data before saving</p>
-      <!-- Contacts table -->
-      <table>
-        <thead>
-          <tr>
-            <th *ngFor="let header of headers">
-              {{ header }}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let row of data">
-            <td *ngFor="let cell of row">
-              {{ cell }}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <button (click)="saveData()">Save</button>      
-      <!-- End contacts table -->
-    </div>
-
-    </main>
-  `,
+  templateUrl:'./upload.component.html',
   styleUrls: ['./upload.component.css']
 })
 export class UploadComponent {

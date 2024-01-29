@@ -1,4 +1,5 @@
 <main class="main">
+    <p class="msg">Click on the "Choose File" button to upload a CSV file:</p>
     <h3 class="error" *ngIf="error">{{ error }}</h3>
     <input type="file" (change)="onFileSelected($event)">
     <p class="msg" *ngIf="selectedFile">Selected file: {{ selectedFile.name }}</p>

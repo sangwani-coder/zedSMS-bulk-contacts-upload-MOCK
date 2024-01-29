@@ -1,0 +1,40 @@
+.body {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.notfound h1 {
+    font-size: 20em;
+    color: #333;
+    margin: 0;
+}
+
+.notfound h2 {
+    font-size: 2em;
+    color: #999;
+    margin-top: 0;
+}
+
+.notfound p {
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}

@@ -1,1 +1,8 @@
-<h3>Your Contacts</h3>
+<main class="main">
+   <p class="msg">Your Contacts</p>
+    <ul *ngIf="data.length > 0">
+        <li *ngFor="let item of data">
+            {{ item.name }} </li>
+    </ul>
+    <h3 *ngIf="data.length === 0" class="error">No data available.</h3>
+</main>

@@ -3,18 +3,21 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="brand" href="#">ZED SMS Bulk Uploads Mock</a>
+                    <a class="brand" href="/">ZED SMS Bulk Uploads Mock</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li id="active"><a href="#">Home</a></li>
-                    <li><a href="#">View Contacts</a></li>
+                    <li id="active"><a href="/" routerLinkActive="actvelink" ariaCurrentWhenActive="page">Home</a>
+                    </li>
+                    <li><a routerLink="/upload-contacts" routerLinkActive="activelink" ariaCurrentWhenActive="page">Upload Contacts</a></li>
+                    <li><a routerLink="/view-contacts" routerLinkActive="activelink" ariaCurrentWhenActive="page">View Contacts</a></li>
                 </ul>
             </div>
         </nav>
     </header>
     <section class="content">
-        <p class="msg">Click on the "Choose File" button to upload a CSV file:</p>
+        <div class="mytitle">
+            <!-- <h3>Upload bulk contacts</h3> -->
+        </div>
     </section>
-    <app-upload></app-upload>
-    <app-contacts></app-contacts>
+    <router-outlet></router-outlet>
 </main>

@@ -1,5 +1,4 @@
-# Fullstack NodeJS & Angular ZEDSMS Bulk Contacts Upload App Mockup
-This repository showcases a mock fullstack application demonstrating my skills in NodeJS and Angular development. It simulates one feature of a ZED SMS company's product, offering a glimpse into my ability to build responsive and data-driven web applications.
+# Fullstack NodeJS & Angular Bulk Contacts Upload Web App.
 
 ### Frontend example
 <img src="./images/frontend.gif">
